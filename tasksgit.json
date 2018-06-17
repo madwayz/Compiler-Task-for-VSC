@@ -1,0 +1,30 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "SourcePawn Compiler for Git",
+            "type": "shell",
+            "presentation": {
+                "panel": "new"
+            },
+            "windows": {
+                "command": "E:\\Programming\\compiler\\spcomp_19.exe"
+            },
+            "args": [
+                "${workspaceFolder}\\Connect-Disconnect-Info\\addons\\sourcemod\\scripting\\${fileBasename}",
+                "-E",
+                "-O2",
+                "-v2",
+                "-iE:\\Programming\\compiler\\include",
+				"-o${workspaceFolder}\\Connect-Disconnect-Info\\addons\\sourcemod\\plugins\\${fileBasenameNoExtension}.smx"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}
